@@ -8,14 +8,20 @@ Have code like the below with some markers (`[ℹ]`) they will get a popup (or
 something else) which describes this part of the code.
 
 ```go
-package main // [ℹ]
+package main
 
-import ( // [ℹ]
+import (
 	"fmt"
+	"net/http"
 )
 
-func main() { // [ℹ], [ℹ]
-	fmt.Println("Hello Gophers ☼") // [ℹ], [ℹ]
+func handler(w http.ResponseWriter, r *http.Request) {
+	fmt.Fprintf(w, "Hello Gophers ☼\n")
+}
+
+func main() {
+	http.HandleFunc("/", handler)
+	http.ListenAndServe(":8080", nil)
 }
 ```
 
@@ -35,26 +41,43 @@ func main() { // [ℹ], [ℹ]
 * `dep` ?
 * `import _` (and rename)
 * Exported names
-* Hierarchy
+* Hierarchy (`net/http`)
 
-### `func main`
+### `func handler`
 
+* Curly braces and C influence
 * Writing functions
+    * type after name
     * Return values?
     * Variadic functions?
-* The main function
-* Curly braces and C influence
+* `w` interface
+* `r` - Pointers (but not `r**`)
+* Will run in goroutine
 
-### `fmt.Println`
+### `fmt.Fprintf(w, "Hello Gophers ☼\n")`
 
 * Function calls
 * Exported variables & package prefix
+* strings
+    * Unicode
+    * runes (for loop)
+* `Fprintf` first argument is `io.Writer`
 
-### strings
+### `func main`
+* The main function
 
-* Unicode
-* runes
-    * For loop
+### `http.HandleFunc("/", handler)`
+
+* function are objects
+* routing
+
+### `http.ListenAndServe(":8080", nil)`
+
+* `:8080` -> all interfaces
+* nil - no default arguments
+* HTTP/2
+* `ListenAndServeTLS`
+
 
 ### go tool
 
