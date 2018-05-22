@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+
+<html>
+<head>
+  <title></title>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<link 
+		href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+		rel="stylesheet"
+		integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
+		crossorigin="anonymous">
+<!--
+<link
+		 href="https://cdnjs.cloudflare.com/ajax/libs/open-iconic/1.1.1/font/css/open-iconic-bootstrap.css"
+		rel="stylesheet"
+>
+-->
+<link
+		 href="https://cdnjs.cloudflare.com/ajax/libs/octicons/4.4.0/font/octicons.css"
+		rel="stylesheet"
+>
+
+<link href="style.css" rel="stylesheet">
+</head>
+<body>
+	<div class="container">
+
+		<div class="row">
+		<h1>Annotated "Hello World"</h1>
+		</div>
+		<div class="row">
+			<div class="col-6">
+
+
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nx">main</span><sup><span class="octicon octicon-question"></span></sup>
+
+<span class="kn">import</span> <span class="p">(</span><sup><span class="octicon octicon-question"></span></sup>
+	<span class="s">&quot;fmt&quot;</span><sup><span class="octicon octicon-question"></span></sup>
+	<span class="s">&quot;net/http&quot;</span><sup><span class="octicon octicon-question"></span></sup>
+<span class="p">)</span>
+
+<span class="kd">func</span><sup><span class="octicon octicon-question"></span></sup><span class="nx">handler</span><span class="p">(</span><span class="nx">w</span> <span class="nx">http</span><span class="p">.</span><span class="nx">ResponseWriter</span><span class="p">,</span> <span class="nx">r</span> <span class="o">*</span><span class="nx">http</span><span class="p">.</span><span class="nx">Request</span><span class="p">)</span> <span class="p">{</span>
+	<span class="nx">fmt</span><span class="p">.</span><span class="nx">Fprintf</span><span class="p">(</span><span class="nx">w</span><span class="p">,</span> <span class="s">&quot;Hello Gophers ☼\n&quot;</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="kd">func</span> <span class="nx">main</span><span class="p">()</span> <span class="p">{</span>
+	<span class="nx">http</span><span class="p">.</span><span class="nx">HandleFunc</span><span class="p">(</span><span class="s">&quot;/&quot;</span><span class="p">,</span> <span class="nx">handler</span><span class="p">)</span>
+	<span class="nx">http</span><span class="p">.</span><span class="nx">ListenAndServe</span><span class="p">(</span><span class="s">&quot;:8080&quot;</span><span class="p">,</span> <span class="kc">nil</span><span class="p">)</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></body>
+
+			</div>
+			<div class="col-6">
+			</div>
+		</div>
+	</div>
+</html>
